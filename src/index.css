@@ -1,0 +1,19 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* بما أننا سنثبت الوضع الداكن، يمكننا إزالة color-scheme: dark; أو تركه */
+  html {
+    color-scheme: dark; /* لضمان أن المتصفح يعرض العناصر الافتراضية في الوضع الداكن */
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* تطبيق الألوان الجديدة مباشرة من Tailwind Config للوضع الداكن */
+  @apply bg-primaryBg text-primaryText transition-colors duration-500;
+}
